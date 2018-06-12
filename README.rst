@@ -1,5 +1,5 @@
 =============================================================
-``pkgversion``:  Simple version variables for Python packages
+``fmtversion``:  Simple version variables for Python packages
 =============================================================
 
 :Author: Geoffrey M. Poore
@@ -19,7 +19,7 @@ this does not fit into a namedtuple of the form used by ``sys.version_info``.
 
 Typical usage::
 
-    from pkgversion import get_version_plus_info
+    from fmtversion import get_version_plus_info
     __version__, __version_info__ = get_version_plus_info(1, 1, 0, 'final', 0)
 
 Following ``sys.version_info``, ``get_version_plus_info()`` takes arguments for

@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 #
 # Copyright (c) 2015, Geoffrey M. Poore
 # All rights reserved.
@@ -24,10 +24,11 @@ except ImportError:
     setup_package_dependent_keywords = dict()
 
 
-# Extract the version from pkgversion.py
-fname = os.path.join(os.path.dirname(__file__), 'pkgversion.py')
+# Extract the version from fmtversion.py
+# Read binary so that the encoding information doesn't cause issues under Python 2
+fname = os.path.join(os.path.dirname(__file__), 'fmtversion.py')
 with open(fname, 'rb') as f:
-    c = compile(f.read(), 'pkgversion.py', 'exec')
+    c = compile(f.read(), 'fmtversion.py', 'exec')
     exec(c)
     version = __version__
 
@@ -37,15 +38,15 @@ with open(fname, encoding='utf8') as f:
 
 
 setup(
-    name = 'pkgversion',
+    name = 'fmtversion',
     version = version,
-    py_modules = ['pkgversion'],
+    py_modules = ['fmtversion'],
     packages = [],
     description = 'Simple version variables for Python packages',
     long_description = long_description,
     author = 'Geoffrey M. Poore',
     author_email = 'gpoore@gmail.com',
-    url = 'http://github.com/gpoore/pkgversion',
+    url = 'http://github.com/gpoore/fmtversion',
     license = 'BSD',
     keywords = ['packaging', 'versioning'],
     # https://pypi.python.org/pypi?:action=list_classifiers

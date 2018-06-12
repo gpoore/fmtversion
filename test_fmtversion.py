@@ -15,18 +15,17 @@ import sys
 if sys.version_info.major == 2:
     from io import open
 import pytest
-import pkgversion as mdl
+import fmtversion as mdl
 
 
 
 
 def test_doc():
-    # Make sure README and doc in `pkgversion.py` match
-    with open('pkgversion.py', encoding='utf8') as f:
+    # Make sure README and doc in `fmtversion.py` match
+    with open('fmtversion.py', encoding='utf8') as f:
         doc = f.read().split("'''", 2)[1].strip('\n ')
     with open('README.rst', encoding='utf8') as f:
-        pattern = doc.split('\n', 1)[0] + '\n'
-        readme = pattern + f.read().split(pattern, 1)[1].rstrip('\n ')
+        readme = f.read().rstrip('\n ')
     assert doc == readme
 
 
