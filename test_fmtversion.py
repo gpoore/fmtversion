@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2015, Geoffrey M. Poore
+# Copyright (c) 2015-2024, Geoffrey M. Poore
 # All rights reserved.
 #
 # Licensed under the BSD 3-Clause License:
-# http://opensource.org/licenses/BSD-3-Clause
+# https://opensource.org/license/BSD-3-clause
 #
 
 
@@ -24,7 +24,7 @@ def test_doc():
     # Make sure README and doc in `fmtversion.py` match
     with open('fmtversion.py', encoding='utf8') as f:
         doc = f.read().split("'''", 2)[1].strip('\n ')
-    with open('README.rst', encoding='utf8') as f:
+    with open('README.md', encoding='utf8') as f:
         readme = f.read().rstrip('\n ')
     assert doc == readme
 
@@ -135,13 +135,3 @@ def test_pep440_examples():
     assert mdl.get_version(1, 0, 0, 'post', 456, usemicro=False) == '1.0.post456'
     assert mdl.get_version(1, 0, 0, 'post', 456, usemicro=False) == '1.0.post456'
     assert mdl.get_version(1, 1, 0, 'dev', 1, usemicro=False) == '1.1.dev1'
-
-
-def test_get_version_from_version_py_str():
-    for version_py_str in ["__version__ = get_version(1, 0, 0, 'dev', 456, usemicro=False)",
-                           "# comment\n__version__ = get_version(1, 0, 0, 'dev', 456, usemicro=False)",
-                           "# comment\n \n__version__ = get_version(1, 0, 0, 'dev', 456, usemicro=False)\n\n\n",
-                           "__version__, __version_info__ = get_version_plus_info(1, 0, 0, 'dev', 456, usemicro=False)\n",
-                           "__version__ = fmtversion.get_version(1, 0, 0, 'dev', 456, usemicro=False)",
-                           "__version__, __version_info__ = fmtversion.get_version_plus_info(1, 0, 0, 'dev', 456, usemicro=False)\n"]:
-        assert mdl.get_version_from_version_py_str(version_py_str) == '1.0.dev456'
