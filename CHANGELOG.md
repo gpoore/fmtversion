@@ -1,6 +1,12 @@
 # Changelog
 
 
+## v1.2.1 (dev)
+
+*  Fixed typos (gpoore/minted#477).
+
+
+
 ## v1.2.0 (2024-05-29)
 
 *  Dropped Python 2 support.

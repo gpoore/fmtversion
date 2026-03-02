@@ -26,7 +26,7 @@ Following `sys.version_info`, `get_version_plus_info()` takes arguments
 for a five-component version number:  major, minor, micro, release level, and
 serial.  The release level may be any of dev, alpha, beta, candidate, final, or
 post, or common variations/abbreviations thereof.  All arguments but
-release level must be convertable to integers.
+release level must be convertible to integers.
 
 If only `__version__` or `__version_info__` is desired, then the functions
 `get_version()` or `get_version_info()` may be used instead.  If a micro
@@ -44,7 +44,7 @@ to zero.
 
 BSD 3-Clause License
 
-Copyright (c) 2015-2024, Geoffrey M. Poore
+Copyright (c) 2015-2026, Geoffrey M. Poore
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
