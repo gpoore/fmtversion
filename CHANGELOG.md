@@ -1,7 +1,7 @@
 # Changelog
 
 
-## v1.2.1 (dev)
+## v1.2.1 (2026-03-02)
 
 *  Fixed typos (gpoore/minted#477).
 

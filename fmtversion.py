@@ -92,7 +92,7 @@ import collections
 
 # Version of this module, which will later be converted into a `__version__`
 # and `__version_info__` once the necessary functions are created
-__version_tuple__ = (1, 2, 1, 'dev', 1)
+__version_tuple__ = (1, 2, 1, 'final', 0)
 
 
 
